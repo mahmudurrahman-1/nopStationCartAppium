@@ -27,8 +27,6 @@ public class BaseDriver {
         cap.setCapability(MobileCapabilityType.DEVICE_NAME, device_name);
         cap.setCapability(MobileCapabilityType.UDID, udid);
 
-        //cap.setCapability("appPackage", "com.mcc.prothomalo");
-        //cap.setCapability("appActivity", "com.quintype.prothomalo.main.activities.MainActivity");
 
 
         //APK file path
