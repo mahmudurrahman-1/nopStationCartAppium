@@ -28,13 +28,13 @@
             <version>4.3.0</version>
         </dependency>
 
-<!--        &lt;!&ndash; https://mvnrepository.com/artifact/org.testng/testng &ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>org.testng</groupId>-->
-<!--            <artifactId>testng</artifactId>-->
-<!--            <version>7.5</version>-->
-<!--            <scope>test</scope>-->
-<!--        </dependency>-->
+        <!--        &lt;!&ndash; https://mvnrepository.com/artifact/org.testng/testng &ndash;&gt;-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.testng</groupId>-->
+        <!--            <artifactId>testng</artifactId>-->
+        <!--            <version>7.5</version>-->
+        <!--            <scope>test</scope>-->
+        <!--        </dependency>-->
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-java</artifactId>
@@ -76,7 +76,6 @@
             <artifactId>poi-ooxml</artifactId>
             <version>5.2.2</version>
         </dependency>
-
 
 
     </dependencies>

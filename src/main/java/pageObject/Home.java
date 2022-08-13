@@ -37,6 +37,7 @@ public class Home extends Common {
     public void scrollCategory() {
         horizontalScroll(homeCategoriesContainer);
     }
+    //Select electronics
 
     public void FindEletronics() {
         CategoryGroups.get(2).click();

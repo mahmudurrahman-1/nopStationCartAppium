@@ -34,8 +34,6 @@ public class CustomerProductAdd extends Common {
     WebElement btnPlus;
     @FindBy(id = "com.nopstation.nopcommerce.nopstationcart:id/btnAddToCart")
     WebElement btnAddtoCart;
-    @FindBy(id = "com.nopstation.nopcommerce.nopstationcart:id/menu_cart")
-    WebElement menuCartbtn;
 
 
     /*****************
@@ -70,7 +68,7 @@ public class CustomerProductAdd extends Common {
     public void DetailsPageaddAction() {
         btnPlus.click();
     }
-
+   // This is method adds item to the cart
     public void AddtoCartButton() {
         btnAddtoCart.click();
     }

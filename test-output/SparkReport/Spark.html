@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary">Test Report</span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Aug 12, 2022 08:34:32 PM</span></a>
+<a href="#"><span class="badge badge-primary">Aug 13, 2022 09:14:25 PM</span></a>
 </li>
 </ul>
 </div>
@@ -61,13 +61,13 @@
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Aug 12, 2022 08:34:32 PM</h3>
+<h3>Aug 13, 2022 09:14:25 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Aug 12, 2022 08:35:34 PM</h3>
+<h3>Aug 13, 2022 09:16:51 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
@@ -138,7 +138,7 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'><b>6</b> steps passed</small></div>
+<div><small data-tooltip='100%'><b>15</b> steps passed</small></div>
 <div>
 <small data-tooltip='0%'><b>0</b> steps failed,
 <b>0</b> skipped, <b data-tooltip='%'>0</b> others
@@ -157,7 +157,7 @@
 </div></div>
 <script>
 var timeline = {
-"Customer add products":60.752
+"Customer add products":143.516
 };
 </script>
 <div class="row">
@@ -199,7 +199,7 @@ warningChild: 0,
 skipChild: 0,
 infoChild: 0,
 grandChildCount: 5,
-passGrandChild: 6,
+passGrandChild: 15,
 failGrandChild: 0,
 warningGrandChild: 0,
 skipGrandChild: 0,
@@ -231,7 +231,7 @@ eventsCount: 5,
           <div class="test-detail">
             <p class="name">Customer add products</p>
             <p class="text-sm">
-              <span>8:34:33 PM</span> / <span>00:01:00:752</span>
+              <span>9:14:28 PM</span> / <span>00:02:23:516</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -240,9 +240,9 @@ eventsCount: 5,
 <div class="p-v-10">
 <div class="info">
 <h5 class="test-status text-pass">Customer add products</h5>
-<span class='badge badge-success'>08.12.2022 8:34:33 PM</span>
-<span class='badge badge-danger'>08.12.2022 8:35:34 PM</span>
-<span class='badge badge-default'>00:01:00:752</span>
+<span class='badge badge-success'>08.13.2022 9:14:28 PM</span>
+<span class='badge badge-danger'>08.13.2022 9:16:51 PM</span>
+<span class='badge badge-default'>00:02:23:516</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -254,7 +254,7 @@ eventsCount: 5,
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>01 Customer add products in his shopping cart</div>
+        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>Customer Add Products to the cart and Customer successfully place order as a guest user</div>
       </div>
     </div>
         <div class="collapse">
@@ -286,6 +286,51 @@ eventsCount: 5,
               </div>
               <div class="step pass-bg" title="Hooks.CustomerProductTest.addTocart()">
                 <span>Then Mike click add to cart button to add the product in his cart</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="Hooks.CustomerProductTest.topCart()">
+                <span>Given Mike go to shopping cart by clicking top cart icon</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="Hooks.CustomerProductTest.ChekoutFromShopping()">
+                <span>When Mike click checkout button from shopping cart page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="Hooks.CustomerProductTest.CheckoutasGuest()">
+                <span>And Mike select checkout as guest from shopping cart page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="Hooks.CustomerProductTest.billingProcessHandling()">
+                <span>Then Mike input all the details in checkout billing details page and click continue</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="Hooks.CustomerProductTest.shippingmethod(java.lang.String)">
+                <span>And Mike select "Next Day Air" as shipping method and click continue</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="Hooks.CustomerProductTest.MoneyOrders(java.lang.String)">
+                <span>And Mike select "Check/Money Order" as payment method and click continue</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="Hooks.CustomerProductTest.paymentInfo()">
+                <span>And Mike click next button on payment information page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="Hooks.CustomerProductTest.Confirmation()">
+                <span>Then Mike click confirm button to place the order</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="Hooks.CustomerProductTest.SuccessfulMessage(java.lang.String)">
+                <span>And Verify order place successfully with popup message "Your order has been successfully processed!"</span>
       <div>
       </div>
               </div>
