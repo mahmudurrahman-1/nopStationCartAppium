@@ -28,7 +28,7 @@ public class ShippingMethod extends Common {
      */
     //scrolling to en element
     public void setScrolldown()  {
-        verticalScroll(scrolldown);
+        verticalScroll(scrolldown,550);
     }
     //select the shipping method
     public void setAllCate() {

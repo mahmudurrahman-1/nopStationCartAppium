@@ -51,13 +51,12 @@ public class CustomerProductTest {
 
     //Scroll left to right and click electronics from categories list
     @When("^Mike click \"([^\"]*)\" from our categories list from home page$")
-    public void Electronics(String category) throws IOException, InvalidFormatException {
+    public void Electronics(String category) throws InterruptedException, IOException, InvalidFormatException {
         List<Map<String, String>> testdata = reader.getData("src/main/resources/ExcelData/Scenario.xlsx", "FirstScen");
         String electronics = testdata.get(0).get("Category");
         softly.assertEquals("electronics",category);
         if (category.equals(electronics)) {
             homepage.scrollCategory();
-            homepage.FindEletronics();
         }
         softly.assertAll();
     }
@@ -70,7 +69,7 @@ public class CustomerProductTest {
         String nokialumia = testdata.get(0).get("Product");
         softly.assertEquals(nokialumia,product);
         if (product.equals(nokialumia)) {
-            Thread.sleep(7000);
+            Thread.sleep(5000);
             product_Page.scrolltoNokia();
             product_Page.selectNokia();
         }
@@ -186,7 +185,6 @@ public class CustomerProductTest {
         String OMText = testdata.get(0).get("Order");
         softly.assertEquals(OMText,method);
         if (method.equals(OMText)) {
-            moneyorder.setScrolldown();
             moneyorder.setScrolldown();
             moneyorder.setScrolldown();
             moneyorder.submitMoneyrder();

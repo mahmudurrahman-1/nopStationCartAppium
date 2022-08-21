@@ -67,10 +67,10 @@ public class BillingDetails extends Common {
     //Select value for country and state
     public void ScrollingintoCountry(int country, int state) {
         countrySelect.click();
-        verticalScroll(listView);
-        verticalScroll(listView);
-        Selectcountrybyindex.get(country).click();
-
+//        verticalScroll(listView,180);
+//        verticalScroll(listView,100);
+        androidScrollToAnElementByText("Bangladesh");
+//        Selectcountrybyindex.get(country).click();
         stateSelect.click();
         Selectstatebyindex.get(state).click();
 
@@ -81,7 +81,7 @@ public class BillingDetails extends Common {
     public void BillingSecondInput(String company, String city, String add1, String add2, String zip, String phone, String fax) throws InterruptedException {
         sendText(inputcompanyName, company);
         Thread.sleep(3000);
-        verticalScroll(scrollForm);
+        verticalScroll(scrollForm,200);
         sendText(inputcity, city);
         sendText(inputaddress1, add1);
         sendText(inputaddress2, add2);

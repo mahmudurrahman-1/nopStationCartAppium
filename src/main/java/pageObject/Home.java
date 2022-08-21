@@ -23,8 +23,8 @@ public class Home extends Common {
     @FindBy(id = "com.nopstation.nopcommerce.nopstationcart:id/tvProductName")
     List<WebElement> CategoryGroups;
 
-    @FindBy(id = "com.nopstation.nopcommerce.nopstationcart:id/tvName")
-    List<WebElement> listMenu;
+    @FindBy(id = "com.nopstation.nopcommerce.nopstationcart:id/rvHomeCategories")
+    WebElement pdName;
     @FindBy(className = "androidx.recyclerview.widget.RecyclerView")
     WebElement homeCategoriesContainer;
 
@@ -34,14 +34,14 @@ public class Home extends Common {
     }
 
     //scroll category
-    public void scrollCategory() {
-        horizontalScroll(homeCategoriesContainer);
+    public void scrollCategory() throws InterruptedException {
+        androidHorizontalScrollByText("com.nopstation.nopcommerce.nopstationcart:id/rvHomeCategories","Electronics");
     }
     //Select electronics
 
-    public void FindEletronics() {
-        CategoryGroups.get(2).click();
-
-    }
+//    public void FindEletronics() {
+//        CategoryGroups.get(2).click();
+//
+//    }
 
 }

@@ -27,14 +27,15 @@ public class BaseDriver {
         cap.setCapability(MobileCapabilityType.DEVICE_NAME, device_name);
         cap.setCapability(MobileCapabilityType.UDID, udid);
 
-
+//cap.setCapability("appPackage","com.nopstation.nopcommerece.nopstationcart");
+//cap.setCapability("appActivity","com.bs.ecommerece.main.MainActivity");
 
         //APK file path
         File appDir = new File("src/main/resources");
         File app = new File(appDir, "nopstationCart_4.40.apk");
         cap.setCapability(MobileCapabilityType.APP, app.getAbsolutePath());
 
-        //cap.setCapability(MobileCapabilityType.AUTOMATION_NAME, "uiautomator2");
+        cap.setCapability(MobileCapabilityType.AUTOMATION_NAME, "uiautomator2");
 
         // Appium server
         URL url = null;

@@ -42,7 +42,8 @@ public class CustomerProductAdd extends Common {
 
     // This method will scroll down to the Nokia
     public void scrolltoNokia() {
-        verticalScroll(EcronicsPageScroll);
+        verticalScroll(EcronicsPageScroll,400);
+        verticalScroll(EcronicsPageScroll,400);
     }
 
     // This method will navigate to nokia page

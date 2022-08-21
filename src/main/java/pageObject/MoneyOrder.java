@@ -29,7 +29,7 @@ public class MoneyOrder extends Common {
      */
 //Scrolls down
     public void setScrolldown()  {
-        verticalScroll(scrolldown);
+        verticalScroll(scrolldown,100);
     }
 
 //Submits the payment way
