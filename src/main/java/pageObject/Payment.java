@@ -22,7 +22,12 @@ public Payment(){
     WebElement nextbutton;
     @FindBy(id= "com.nopstation.nopcommerce.nopstationcart:id/checkoutButton")
     WebElement confirmbtn;
-
+   @FindBy(id = "PhoneNumber")
+   WebElement phoneno;
+   @FindBy(id = "TransactionId")
+   WebElement transactionid;
+   @FindBy(className = "android.widget.EditText")
+   List<WebElement> inputs;
 
 
     /********************
@@ -30,16 +35,19 @@ public Payment(){
      */
 
     // It switches Native app to webview and clicks next button
-    public void switchToWebView() throws InterruptedException {
+    public void switchToWebView(String phone,String tsi) throws InterruptedException {
         Set<String> contextNames = PageDriver.getCurrentDriver().getContextHandles();
         for (String contextName : contextNames) {
             System.out.println(contextName); //prints out something like NATIVE_APP \n WEBVIEW_1
         }
-        Thread.sleep(3000);
         PageDriver.getCurrentDriver().context("NATIVE_APP"); // set context to NATIVE_APP
+        Thread.sleep(4000);
+        sendText(inputs.get(0),phone);
+        sendText(inputs.get(1),tsi);
         nextbutton.click();
-
     }
+
+
     //Order Confirm
     public void finalConfirm(){
         confirmbtn.click();

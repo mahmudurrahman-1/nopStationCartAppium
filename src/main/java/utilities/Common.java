@@ -150,7 +150,7 @@ public class Common {
     public void androidHorizontalScrollByText(String id,String text) {
         try {
             (PageDriver.getCurrentDriver()).findElement(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)."
-                    + "resourceId(\""+id+"\"))" + ".setAsHorizontalList().scrollIntoView(new UiSelector().textContains(\""+text+"\"))")).click(); }
+                    + "resourceId(\""+id+"\"))" + ".setAsHorizontalList().scrollIntoView(new UiSelector().text(\""+text+"\"))")); }
         catch (Exception e) {
             throw new NoSuchElementException("No element" + e);
         }

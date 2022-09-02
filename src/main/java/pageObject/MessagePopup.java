@@ -5,12 +5,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.Set;
+
 public class MessagePopup {
-    public void MessagePopup(){
+    public MessagePopup(){
         PageFactory.initElements(PageDriver.getCurrentDriver(),this);
-
     }
-
 
     /*********
      * Locators
@@ -28,8 +28,10 @@ public class MessagePopup {
     /**********
      * Actions
      */
-    public void succeedMessagepopup() throws InterruptedException{
-        Thread.sleep(4000);
-        returnto.click();
+
+    public void messageShown() throws InterruptedException{
+        Thread.sleep(2000);
+        Furthercontinue.click();
     }
+
 }

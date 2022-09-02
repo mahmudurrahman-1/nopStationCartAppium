@@ -6,18 +6,15 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
 import pageObject.*;
 import utilities.ExcelDataParser;
-
 import java.time.Duration;
 import java.util.List;
 import java.util.Map;
 import java.io.IOException;
-import java.util.Set;
+
 
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 
@@ -57,6 +54,7 @@ public class CustomerProductTest {
         softly.assertEquals("electronics",category);
         if (category.equals(electronics)) {
             homepage.scrollCategory();
+            homepage.clickEletronics();
         }
         softly.assertAll();
     }
@@ -71,7 +69,7 @@ public class CustomerProductTest {
         if (product.equals(nokialumia)) {
             Thread.sleep(5000);
             product_Page.scrolltoNokia();
-            product_Page.selectNokia();
+//            product_Page.selectNokia();
         }
         softly.assertAll();
     }
@@ -177,7 +175,7 @@ public class CustomerProductTest {
     }
     // Payment method
     @And("^Mike select \"([^\"]*)\" as payment method and click continue$")
-    public void MoneyOrders(String method) throws IOException, InvalidFormatException{
+    public void MoneyOrders(String method) throws InterruptedException, IOException, InvalidFormatException{
         new WebDriverWait(PageDriver.getCurrentDriver(), Duration.ofSeconds(20));
         //Excel data provider
         List<Map<String, String>> testdata = reader.getData("src/main/resources/ExcelData/Scenario.xlsx", "ThirdScen");
@@ -185,28 +183,31 @@ public class CustomerProductTest {
         String OMText = testdata.get(0).get("Order");
         softly.assertEquals(OMText,method);
         if (method.equals(OMText)) {
-            moneyorder.setScrolldown();
-            moneyorder.setScrolldown();
+            moneyorder.ScrolldownSelectRocket();
+            Thread.sleep(1000);
+            moneyorder.Scroll();
             moneyorder.submitMoneyrder();
         }
         softly.assertAll();
     }
     // Payment Webview page
     @And("^Mike click next button on payment information page$")
-    public void paymentInfo() throws InterruptedException{
+    public void paymentInfo() throws InterruptedException,IOException, InvalidFormatException{
         new WebDriverWait(PageDriver.getCurrentDriver(), Duration.ofSeconds(10));
-        Thread.sleep(5000);
-        paymentprocess.switchToWebView();
-       // paymentprocess.ClickonNext();
-
+        //Excel data provider
+        List<Map<String, String>> testdata = reader.getData("src/main/resources/ExcelData/Scenario.xlsx", "FourthScen");
+        //List of data
+        String phoneno= testdata.get(0).get("mobile number");
+        String transid= testdata.get(0).get("transaction id");
+        Thread.sleep(8000);
+        paymentprocess.switchToWebView(phoneno,transid);
     }
     // Click button to confirm
     @Then ("^Mike click confirm button to place the order$")
     public void Confirmation() throws InterruptedException{
         new WebDriverWait(PageDriver.getCurrentDriver(), Duration.ofSeconds(10));
         paymentprocess.finalConfirm();
-        Thread.sleep(3000);
-
+        Thread.sleep(10000);
     }
     // Pop up message will appear
     @And("^Verify order place successfully with popup message \"([^\"]*)\"$")
@@ -218,8 +219,8 @@ public class CustomerProductTest {
         String Message= testdata.get(0).get("Message");
         softly.assertEquals(Message,popupMessage);
         if (popupMessage.equals("Message")){
-            Thread.sleep(10000);
-            messagepopup.succeedMessagepopup();
+
+            messagepopup.messageShown();
         }
         softly.assertAll();
 

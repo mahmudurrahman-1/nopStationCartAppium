@@ -18,8 +18,8 @@ public class MoneyOrder extends Common {
      */
     @FindBy(className = "android.widget.ScrollView")
     WebElement scrolldown;
-    @FindBy(className = "android.widget.RelativeLayout")
-    List<WebElement> allCate;
+    String method = "Rocket";
+
     @FindBy(id = "com.nopstation.nopcommerce.nopstationcart:id/btnContinue")
     WebElement submitbutton;
 
@@ -27,12 +27,21 @@ public class MoneyOrder extends Common {
      * Actions
 
      */
+
+//select nagad
+
+
 //Scrolls down
-    public void setScrolldown()  {
+    public void ScrolldownSelectRocket()  {
+        androidScrollToAnElementByText(method);
+
+    }
+
+    public void Scroll() {
         verticalScroll(scrolldown,100);
     }
 
-//Submits the payment way
+    //Submits the payment way
     public void submitMoneyrder(){
         submitbutton.click();
     }

@@ -5,7 +5,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Common;
-
 import java.util.List;
 
 public class CustomerProductAdd extends Common {
@@ -19,10 +18,14 @@ public class CustomerProductAdd extends Common {
     /********** Locators Inside Electronics ***********/
     @FindBy(className = "androidx.recyclerview.widget.RecyclerView")
     WebElement EcronicsPageScroll;
+    String id = "com.nopstation.nopcommerce.nopstationcart:id/rvProductList";
+
     @FindBy(className = "android.widget.ImageButton")
     List<WebElement> Selectnokia;
-
-    /********** Locators Inside Product Nokia Lumia 1020 ***********/
+    String text = "Nokia Lumia 1020";
+    /*************
+     * Locators Inside Product Nokia Lumia 1020
+     * ***********/
 
     @FindBy(className = "android.view.ViewGroup")
     List<WebElement> sizeButton;
@@ -42,17 +45,8 @@ public class CustomerProductAdd extends Common {
 
     // This method will scroll down to the Nokia
     public void scrolltoNokia() {
-        verticalScroll(EcronicsPageScroll,400);
-        verticalScroll(EcronicsPageScroll,400);
+        androidVerticalScrollToTextById(id,text);
     }
-
-    // This method will navigate to nokia page
-    public void selectNokia() {
-        Selectnokia.get(2).click();
-//       System.out.println(Selectnokia.size());
-
-    }
-
     //This method perform scroll down operation in a page
     public void scrollingDown() {
         MakeScrollDown();
@@ -74,3 +68,27 @@ public class CustomerProductAdd extends Common {
         btnAddtoCart.click();
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//        verticalScroll(EcronicsPageScroll,400);
+//        verticalScroll(EcronicsPageScroll,400);
+// This method will navigate to nokia page
+//    public void selectNokia() {
+//        Selectnokia.get(1).click();
+////       System.out.println(Selectnokia.size());
+//
+//    }

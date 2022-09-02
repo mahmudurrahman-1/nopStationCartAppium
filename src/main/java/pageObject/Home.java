@@ -39,9 +39,9 @@ public class Home extends Common {
     }
     //Select electronics
 
-//    public void FindEletronics() {
-//        CategoryGroups.get(2).click();
-//
-//    }
+    public void clickEletronics() {
+        CategoryGroups.get(1).click();
+
+    }
 
 }
